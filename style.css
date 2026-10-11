@@ -1,0 +1,68 @@
+/* Free IRAN Landing — pure CSS, no dependencies */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a1a;--cyan:#00d4ff;--purple:#7c5cfc;--pink:#ff6b9d;--glass:rgba(255,255,255,.05);--brd:rgba(255,255,255,.1)}
+html{scroll-behavior:smooth}
+body{font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.9;overflow-x:hidden;min-height:100vh}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+.noscript{background:#f59e0b;color:#000;text-align:center;padding:12px;font-weight:700}
+
+/* Background */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.22;animation:drift 14s ease-in-out infinite}
+.b1{width:480px;height:480px;background:var(--cyan);top:-140px;right:-140px}
+.b2{width:380px;height:380px;background:var(--purple);bottom:-120px;left:-120px;animation-delay:-5s}
+.b3{width:280px;height:280px;background:var(--pink);top:45%;left:45%;animation-delay:-9s}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:80px 0}
+.pill{display:inline-block;padding:8px 22px;border-radius:999px;background:var(--glass);border:1px solid var(--brd);font-size:14px;margin-bottom:28px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:8px;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.35}}
+.hero h1{font-size:clamp(44px,8vw,88px);font-weight:900;line-height:1.4;margin-bottom:20px}
+.grad{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:19px;color:rgba(255,255,255,.68);margin-bottom:44px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 42px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;transition:transform .25s,box-shadow .25s;font-family:inherit}
+.btn-a{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;box-shadow:0 8px 32px rgba(0,212,255,.28)}
+.btn-a:hover{transform:translateY(-3px);box-shadow:0 12px 44px rgba(0,212,255,.4)}
+.btn-b{background:var(--glass);color:#fff;border:1px solid var(--brd)}
+.btn-b:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
+
+/* Sections */
+.sec{padding:88px 0}
+.sec h2{font-size:clamp(30px,4.5vw,44px);font-weight:900;text-align:center;margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:var(--glass);border:1px solid var(--brd);border-radius:20px;padding:36px 28px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(0,212,255,.35)}
+.ic{font-size:44px;margin-bottom:16px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:rgba(255,255,255,.6);font-size:15px}
+.stat{text-align:center}
+.num{font-size:44px;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lbl{color:rgba(255,255,255,.6);margin-top:6px}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:14px}
+.faq details{padding:0;overflow:hidden}
+.faq summary{padding:22px 26px;cursor:pointer;font-weight:700;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 26px 24px;color:rgba(255,255,255,.65)}
+
+/* CTA */
+.cta{text-align:center;padding:56px 32px}
+.cta h2{font-size:clamp(30px,5vw,46px);margin-bottom:14px}
+.cta p{color:rgba(255,255,255,.65);margin-bottom:36px}
+
+/* Footer */
+footer{padding:44px 0;border-top:1px solid var(--brd);text-align:center}
+footer p{margin:6px 0}
+.dim{color:rgba(255,255,255,.4);font-size:14px}
+
+/* Reveal */
+.card{opacity:0;transform:translateY(28px)}
+.card.in{opacity:1;transform:none;transition:opacity .7s,transform .7s}
+
+@media(max-width:640px){.sec{padding:60px 0}.btn{width:100%;text-align:center}}
